@@ -1,0 +1,41 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: /bin/sh -c "while sleep 1000; do :; done"
+    volumes:
+      - ..:/workspace:cached
+    networks:
+      - laravel-network
+
+  postgres:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: laravel
+      POSTGRES_PASSWORD: secret
+      POSTGRES_DB: laravel
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    networks:
+      - laravel-network
+    ports:
+      - "5432:5432"
+
+  # redis:
+  #   image: redis:latest
+  #   volumes:
+  #     - redisdata:/data
+  #   networks:
+  #     - laravel-network
+  #   ports:
+  #     - "6379:6379"
+
+volumes:
+  pgdata:
+  redisdata:
+
+networks:
+  laravel-network:

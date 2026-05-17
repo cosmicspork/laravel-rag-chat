@@ -1,0 +1,26 @@
+# Ignore node_modules and npm debug logs
+node_modules
+npm-debug.log
+
+# Exclude local environment files to avoid leaking sensitive information.
+.env
+.env.*
+.env.local
+
+# Ignore version control directories and files.
+.git
+.gitignore
+
+# Ignore IDE-specific files and directories.
+.devcontainer
+.vscode
+
+# Ignore log files and log directories.
+*.log
+storage/logs
+
+# Exclude the vendor directory since dependencies are installed in the container.
+vendor
+
+# Exclude documentation
+*.md
