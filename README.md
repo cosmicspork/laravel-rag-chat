@@ -144,4 +144,4 @@ The high-level deployment steps were:
 
 ### Integrate GitHub Repository with Azure App Service
 
-Configure deployment credentials in the App Service's Deployment Center so GitHub Actions can push container images and trigger deployments. See [azure/deployment-center-example.png](azure/deployment-center-example.png) for an example configuration.
+Configure deployment credentials in the App Service's Deployment Center so GitHub Actions can push container images and trigger deployments.
